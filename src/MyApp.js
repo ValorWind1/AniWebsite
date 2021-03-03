@@ -7,6 +7,7 @@ const MyApp =()=> {
     const [anime , setAnime] = useState([]);
     const [pictures , setPictures] = useState([]);
     const [smallPictures , setSmallPictures] = useState("https://cdn.myanimelist.net/images/anime/12/19609.jpg");
+    
 
     const headers = {
           'x-rapidapi-key': 'ecf2cd78aamshe6b1fc38f7bf795p1052cajsnca6e52e07661',
@@ -14,21 +15,17 @@ const MyApp =()=> {
         }
       
 
-
-
-
     useEffect(() => {
-        let n = Math.floor(Math.random() * 4710)
+        let n = Math.floor(Math.random() * 4200)
         fetch(`https://jikan1.p.rapidapi.com/anime/${n}/pictures`, {headers})
         .then((response) => response.json())
         .then((data) => {setPictures(data.pictures)        
-        
+        console.log("data",data)
         })
-        .catch(error => console.log(error))
-       
+        .catch(error => console.log(error))     
     }, [])
 
- 
+  
     console.log(pictures)
 
     const picturesSRC = (event) => {
