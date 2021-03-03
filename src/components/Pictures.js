@@ -3,11 +3,14 @@ import React from "react"
 const Pictures =(props) => {
 
 
-
+    
     return (
         <div>
-                <h1>COWBOY BEEP BOOP</h1>
-            <img src={props.pics[1].small} alt="" />
+            
+            <img src={props.src} alt=""/>
+            <img src={props.src} alt=""/>
+            <img src={props.src} alt=""/>
+            
         </div>
     )
 }
